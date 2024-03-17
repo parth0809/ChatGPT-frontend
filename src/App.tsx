@@ -1,26 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import RightPannel from './Rightpannel';
+import LeftPannel from './LeftPannel';
+import SplitPane from 'react-split-pane';
 
-function App() {
+
+function App(props: { text: string }) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <SplitPane split="vertical" minSize={0} maxSize={'260px'} defaultSize={'260px'}>
+      <LeftPannel />
+      <RightPannel />
+    </SplitPane>
   );
-}
+};
 
 export default App;
